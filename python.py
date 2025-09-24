@@ -1,21 +1,7 @@
-# ==============================================================================
-# Frameworks Assignment: CORD-19 Data Analysis
-#
-# This script performs data loading, cleaning, analysis, and visualization
-# on a trimmed version of the CORD-19 metadata.csv file.
-#
-# Author: Your Name
-# GitHub Repo: (Will be added later)
-# ==============================================================================
 
-# ==============================================================================
 # Part 1: Data Loading and Basic Exploration
-# ==============================================================================
 import pandas as pd
 import os
-
-# Define the path to the trimmed dataset.
-# The script assumes 'trimmed_metadata.csv' is in the same directory.
 trimmed_file_path = 'trimmed_metadata.csv'
 
 try:
@@ -36,9 +22,7 @@ except FileNotFoundError:
     print("Please ensure 'trimmed_metadata.csv' is in the same directory as this script.")
     exit()
 
-# ==============================================================================
 # Part 2: Data Cleaning and Preparation
-# ==============================================================================
 print("\n--- Starting Data Cleaning and Preparation ---")
 
 # Create a cleaned version of the dataset to avoid modifying the original
@@ -62,9 +46,9 @@ df_cleaned['abstract_word_count'] = df_cleaned['abstract'].apply(lambda x: len(x
 print("Data cleaning and preparation complete. Ready for analysis.")
 print(f"Cleaned DataFrame shape: {df_cleaned.shape}")
 
-# ==============================================================================
+
 # Part 3: Data Analysis and Visualization
-# ==============================================================================
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import Counter
@@ -116,13 +100,3 @@ plt.title('Word Cloud of Paper Titles')
 plt.axis('off')
 plt.show()
 print("Visualization 3: Word cloud of paper titles generated.")
-
-
-# ==============================================================================
-# Part 5: Documentation
-# ==============================================================================
-print("\n--- Documentation and Reflection ---")
-print("Remember to add comments to your code and create a README.md file for your GitHub repository.")
-print("The README should summarize your findings and reflect on challenges and learnings.")
-
-print("\nAssignment script execution complete.")
